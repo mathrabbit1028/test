@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS 기본 - CSS 적용하기</title>
+    <meta charset = "utf-8">
+    <link href = "style.css" rel = "stylesheet">
+  </head>
+
+  <body>
+    <h1><a href = "index.html">CSS 기본</a></h1>
+    <div id="main">
+      <ol id="contents">
+        <li><a href = "1_grammar.html">CSS 적용하기</a></li>
+        <li><a href = "2_property.html">CSS 속성</a></li>
+        <li><a href = "3_selector.html">CSS 선택자</a></li>
+        <li><a href = "4_box.html">박스모델</a></li>
+        <li><a href = "5_grid.html">그리드</a></li>
+        <li><a href = "6_mediaquery.html">반응형 디자인</a></li>
+        <li><a href = "7_file.html">CSS 파일 이용하기</a></li>
+        <li><a href = "8_final.html">앞으로</a></li>
+      </ol>
+      <div id="article">
+        <h2>CSS 적용하기</h2>
+        이 페이지는 CSS를 적용하는 두 가지 방법에 대한 내용을 다룹니다.
+        <h3>태그를 이용하는 방법</h3>
+        <strong>style 태그</strong>를 이용해 CSS를 적용할 수 있습니다. style 태그 안에 CSS 코드를 넣으면 됩니다. <br>
+        태그를 이용해 넣은 CSS 코드는 <strong>전체 body</strong> 안에 적용됩니다.
+        <h3>속성을 이용하는 방법</h3>
+        <strong>style 속성</strong>을 이용해 CSS를 적용할 수 있습니다. style 속성에 CSS 코드를 넣으면 됩니다. <br>
+        속성을 이용해 넣은 CSS 코드는 <strong>style 속성을 넣은 태그</strong>에만 적용됩니다.
+        <h3>문법</h3>
+        <div id="grammar">
+          태그: &lt;style&gt;<span style="color:blue;">(CSS code)</span>&lt;/style&gt; <br>
+          속성: &lt;<span style="color:blue;">(TAG name)</span> style="<span style="color:blue;">(CSS code)</span>"&gt;
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

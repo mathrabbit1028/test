@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS 기본 - 박스모델</title>
+    <meta charset = "utf-8">
+    <link href = "style.css" rel = "stylesheet">
+    <style>
+      .box_model#content {
+        color: rgba(255, 167, 89, 1.0);
+        font-weight: bold;
+      }
+      .box_model#padding {
+        color: rgba(69, 116, 176, 1.0);
+        font-weight: bold;
+      }
+      .box_model#border {
+        color: rgba(48, 71, 101, 1.0);
+        font-weight: bold;
+      }
+      .box_model#margin {
+        color: rgba(20, 169, 193, 1.0);
+        font-weight: bold;
+      }
+      a{
+        border
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1><a href = "index.html">CSS 기본</a></h1>
+    <div id="main">
+      <ol id="contents">
+        <li><a href = "1_grammar.html">CSS 적용하기</a></li>
+        <li><a href = "2_property.html">CSS 속성</a></li>
+        <li><a href = "3_selector.html">CSS 선택자</a></li>
+        <li><a href = "4_box.html">박스모델</a></li>
+        <li><a href = "5_grid.html">그리드</a></li>
+        <li><a href = "6_mediaquery.html">반응형 디자인</a></li>
+        <li><a href = "7_file.html">CSS 파일 이용하기</a></li>
+        <li><a href = "8_final.html">앞으로</a></li>
+      </ol>
+      <div id=article>
+        <h2>박스모델</h2>
+        CSS에서 객체는 <strong>박스모델</strong>로 관리됩니다. <br>
+        아래는 박스 모델을 간단히 그림으로 나타낸 것입니다. 이제 아래를 천천히 읽으며 이 그림의 의미를 이해해 봅시다! <br> <br>
+        <img src="box_model.png" width="70%" style="display: block; margin: 0px auto;">
+        <h3>박스모델의 구조</h3>
+        박스모델은 위 그림에서 보다시피 안에서부터
+          <span class="box_model" id=content>content</span>,
+          <span class="box_model" id=padding>padding</span>,
+          <span class="box_model" id=border>border</span>,
+          <span class="box_model" id=margin>margin</span>
+        으로 나타낼 수 있습니다.
+        <ol>
+          <li class="box_model" id=content>content</li>
+            <span class="box_model" id=content>content</span>은 객체에서 실제로 정보를 담고 있는 부분을 의미합니다.
+          <li class="box_model" id=padding>padding</li>
+            <span class="box_model" id=padding>padding</span>은 객체의 <span class="box_model" id=border>border</span>와 <span class="box_model" id=content>content</span> 사이의 공간을 의미합니다.
+            만약 <span class="box_model" id=border>border</span>를 더 넓게 잡고 싶다면 <span class="box_model" id=padding>padding</span>을 증가시켜야 합니다.
+          <li class="box_model" id=border>border</li>
+            <span class="box_model" id=border>border</span>은 객체의 경계를 말합니다. <span class="box_model" id=border>border</span>를 기준으로 객체의 안밖이 바뀝니다.
+          <li class="box_model" id=margin>margin</li>
+            <span class="box_model" id=margin>margin</span>은 <span class="box_model" id=border>border</span> 바깥의 여백을 말합니다.
+            만약 서로 다른 두 객체의 <span class="box_model" id=border>border</span> 사이의 거리를 더 넓게 잡고 싶다면 <span class="box_model" id=margin>margin</span>을 증가시켜야 합니다.
+        </ol>
+        <h3>display 속성</h3>
+        display는 박스모델에서 각 객체의 <span class="box_model" id=content>content</span>가 어떻게 표시될 지 결정하는 인자입니다. display에는 세 가지 종류의 값이 있습니다. <br>
+        <ol>
+          <strong><li>inline</li></strong>
+            inline 값은 <span class="box_model" id=content>content</span>가 <strong>한 줄의 일부</strong>가 되도록 합니다. 예를 들어 strong 태그는 inline으로 A와 같이 부분을 차지합니다.
+          <strong><li>block</li></strong>
+            block 값은 <span class="box_model" id=content>content</span>가 <strong>한 줄을 차지</strong>하도록 합니다. 예를 들어 제목 태그는 block으로 B와 같이 한 줄을 차지합니다.
+          <strong><li>none</li></strong>
+            none 값은 <span class="box_model" id=content>content</span>가 <strong>보이지 않게</strong> 합니다. 예를 들어 head 태그는 none으로 보이지 않습니다.
+        </ol>
+        <br> <br>
+        <div style="text-align:center; font-size:30px;"> A: asdf<strong style="border: red 5px solid">asdf</strong>asdf </div> <br> <br>
+        <div style="text-align:center; font-size:30px;"> B: asdf<h2 style="border: red 5px solid">asdf</h2>asdf </div>
+        <br> <br>
+        <h3>display와 태그</h3>
+        display와 관련된 태그도 있습니다. 이 display와 관련된 태그는 이 태그 안에 있는 부분의 display를 설정합니다.
+        <ol>
+          <strong><li>span</li></strong>span 태그는 안에 있는 내용이 <strong>inline display</strong>를 갖도록 합니다.
+          <strong><li>div</li></strong>div 태그는 안에 있는 내용이 <strong>block display</strong>를 갖도록 합니다.
+        </ol>
+        하지만 이는 태그의 특성으로, CSS의 display 속성을 조절하면 바꿀 수 있습니다. <br>
+        또한 이 태그 2개는 display의 설정보다 <strong>내용을 묶는데</strong> 더 자주 사용되며 이는 중요한 성질입니다.
+        <h3>개발자 도구: 검사</h3>
+        모든 웹페이지에서 우클릭 후 '검사'를 누르면 이 웹페이지의 HTML 소스를 볼 수 있습니다. <br>
+        우리가 흔히 개발자 도구라 부르는 이것은 박스모델을 이용한 개발에서 유용합니다. <br>
+        개발자 도구가 유용한 이유는 HTML 소스에 커서를 가져다 놓았을 때, 그 소스가 만드는 객체를 박스모델의 형태로 스타일 탭에서 보여주기 때문입니다. <br>
+        항상 개발 과정에서 디자인을 하다 보면 생기는 요구사항이 있습니다. 이때 개발자 도구를 이용해 어느 부분을 수정해야 할지 확인하시며 개발하시기 바랍니다.
+
+        <h3>문법</h3>
+        <div id="grammar">
+          네 변 <span class="box_model" id=border>border</span> 조절: border: (<span class="box_model" id=border>border</span> 속성들) <br>
+          한 변 <span class="box_model" id=border>border</span> 조절: border-(left, right, top, bottom): (<span class="box_model" id=border>border</span> 속성들) <br>
+          <span class="box_model" id=border>border</span> 속성들: border-width: ___px, border-color: (색) border-style: (선 종류) <br>
+          네 변 <span class="box_model" id=padding>padding</span> 조절: padding: ___px" <br>
+          한 변 <span class="box_model" id=padding>padding</span> 조절: padding-(left, right, top, bottom): ___px <br>
+          네 변 <span class="box_model" id=margin>margin</span> 조절: margin: ___px <br>
+          한 변 <span class="box_model" id=margin>margin</span> 조절: margin-(left, right, top, bottom): ___px <br>
+          span 태그: &lt;span&gt;......&lt;/span&gt; <br>
+          div 태그: &lt;div&gt;......&lt;/div&gt; <br>
+        </div>
+        <h3>예시</h3>
+        <div id="example">
+          <span>wow<span><u>asdf</u></span>wow</span> <span>: wow&lt;span&gt;&lt;u&gt;asdf&lt;/u&gt;&lt;/span&gt;wow</span>
+          <span>wow<div><u>asdf</u></div>wow</span> <span><br>: wow&lt;span&gt;&lt;u&gt;asdf&lt;/u&gt;&lt;/span&gt;wow</span>
+          <span><br></span><span><br></span>
+          <span><span style="padding:10px; border:1px black solid;">asdf</span></span>
+          <span>: &lt;span style="padding:10px; border:1px black solid;"&gt;asdf&lt;/span&gt;</span>
+          <span><br></span><span><br></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

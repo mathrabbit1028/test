@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS 기본 - 그리드</title>
+    <meta charset = "utf-8">
+    <link href = "style.css" rel = "stylesheet">
+  </head>
+
+  <body>
+    <h1><a href = "index.html">CSS 기본</a></h1>
+    <div id="main">
+      <ol id="contents">
+        <li><a href = "1_grammar.html">CSS 적용하기</a></li>
+        <li><a href = "2_property.html">CSS 속성</a></li>
+        <li><a href = "3_selector.html">CSS 선택자</a></li>
+        <li><a href = "4_box.html">박스모델</a></li>
+        <li><a href = "5_grid.html">그리드</a></li>
+        <li><a href = "6_mediaquery.html">반응형 디자인</a></li>
+        <li><a href = "7_file.html">CSS 파일 이용하기</a></li>
+        <li><a href = "8_final.html">앞으로</a></li>
+      </ol>
+      <div id=article>
+        <h2>그리드</h2>
+        그리드는 display의 새로운 속성값으로 여러 요소들을 표의 형태로 나타내기 위해 사용됩니다. <br>
+        아래는 그리드를 간단히 그림으로 나타낸 것입니다. 이제 아래를 천천히 읽으며 이 그림의 의미를 이해해 봅시다! <br> <br>
+        <img src="grid_model.jpg" width="50%" style="display: block; margin: 0px auto;">
+        <h3>용어 정리</h3>
+          <ul>
+            <li>grid cell: 그리드의 한 칸</li>
+            <li>grid line: 그리드의 구분선</li>
+            <li>grid area: 그리드의 구역</li>
+            <li>grid column: 그리드의 세로선</li>
+            <li>grid row: 그리드의 가로선</li>
+          </ul>
+        <h3>그리드를 만드는 과정</h3>
+          아래 과정을 통해 그리드를 선언할 수 있다.
+          <ol>
+            <li><strong>display:grid</strong>를 통해 그리드임을 지정하기</li>
+            <li><strong>grid-template-columns</strong>와 <strong>grid-template-rows</strong>로 행과 열 너비 조정하기</li>
+            <li><strong>column-gap</strong>와 <strong>row-gap</strong>로 행과 열 사이 간격 조정하기</li>
+            <li><strong>grid-template-areas</strong>로 각 grid cell에 grid area를 지정하거나 <strong>grid-row, grid-column</strong>으로 수동 지정</li>
+            <li>각 grid-area 또는 grid-cell에 CSS style 지정</li>
+          </ol>
+        <h3>그리드 여백 조절</h3>
+          그리드의 위치와 grid area에서 내용의 위치도 조절할 수 있다. <br>
+          그리드의 수평 위치는 align-content로, 수직 위치는 justify-content로 조절할 수 있다. <br>
+          grid area에서 내용의 수평 위치는 align-self로, 수직 위치는 justify-self로 조절할 수 있다. <br>
+        <h3>문법</h3>
+        <div id="grammar">
+          그리드 지정: display: <span style="color:blue">grid</span> <br>
+          그리드 크기 지정: grid-template-(columns, rows): [line1] size1 [line2] size2 [line3] size3 ...... (line의 초기값은 1, 2, 3, ......) <br>
+          그리드 간격 지정: (column, row)-gap: size <br>
+          그리드 구역 지정: grid-template-areas: "name11 name12 name13 ......" "name21 name22 name23 ......" ...... <br>
+          그리드 구역 수동 지정: grid-(row, column): start end [grid-(row, column)-(start, end)로도 가능] <br>
+          그리드 구역 지정을 위한 속성: grid-area: name
+          그리드 여백 조절: (align, justify)-(content, self): flex-start | flex-end | center | space-between | space-around | stretch <br>
+          size: px 뿐만 아니라 <span style="color:blue">fr</span>도 가능하다. <span style="color:blue">fr</span>은 <span style="color:blue">비율</span>을 나타낸다.
+        </div>
+        <h3>예시</h3>
+        아래 예시는, 실제 이 웹페이지를 만들 때 사용된 css 코드입니다. <br>
+        <br>
+        <div id="example">
+          #main { <br>
+            &nbsp;&nbsp;display: grid; <br>
+            &nbsp;&nbsp;grid-template-columns: 300px 1fr; <br>
+          } <br>
+          #main #contents { <br>
+            &nbsp;&nbsp;padding-left: 60px; <br>
+            &nbsp;&nbsp;padding-top: 30px; <br>
+            &nbsp;&nbsp;padding-right: 60px; <br>
+            &nbsp;&nbsp;margin: 0px; <br>
+            &nbsp;&nbsp;font-size: 20px; <br>
+          } <br>
+          #main #article { <br>
+            &nbsp;&nbsp;padding-top: 10px; <br>
+            &nbsp;&nbsp;padding-left: 60px; <br>
+            &nbsp;&nbsp;padding-right: 60px; <br>
+            &nbsp;&nbsp;padding-bottom: 60px; <br>
+            &nbsp;&nbsp;border-left: solid 5px gray; <br>
+          } <br>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

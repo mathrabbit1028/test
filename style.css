@@ -1,0 +1,47 @@
+body {
+  margin: 0px;
+}
+a {
+  color: rgba(12, 36, 97, 1.0);
+  text-decoration: none;
+  font-weight: bold;
+}
+h1 {
+  font-size: 60px;
+  text-align: center;
+  padding: 20px;
+  margin: 0px;
+  border-bottom: solid 5px gray;
+}
+#main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+#main #contents {
+  padding-left: 60px;
+  padding-top: 30px;
+  padding-right: 60px;
+  margin: 0px;
+  font-size: 20px;
+}
+#main #article {
+  padding-top: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 60px;
+  border-left: solid 5px gray;
+}
+#main #article #grammar {
+  font-weight: bold;
+  background-color: rgba(139, 195, 74, 0.5);
+  padding: 10px;
+  border: rgba(0, 0, 0, 0.5) 3px solid;
+}
+#main #article #example {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  font-weight: bold;
+  background-color: rgba(252, 204, 0, 0.5);
+  padding: 10px;
+  border: rgba(0, 0, 0, 0.5) 3px solid;
+}

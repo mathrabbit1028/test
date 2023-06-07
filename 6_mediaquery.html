@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS 기본 - 반응형 디자인</title>
+    <meta charset = "utf-8">
+    <link href = "style.css" rel = "stylesheet">
+  </head>
+
+  <body>
+    <h1><a href = "index.html">CSS 기본</a></h1>
+    <div id="main">
+      <ol id="contents">
+        <li><a href = "1_grammar.html">CSS 적용하기</a></li>
+        <li><a href = "2_property.html">CSS 속성</a></li>
+        <li><a href = "3_selector.html">CSS 선택자</a></li>
+        <li><a href = "4_box.html">박스모델</a></li>
+        <li><a href = "5_grid.html">그리드</a></li>
+        <li><a href = "6_mediaquery.html">반응형 디자인</a></li>
+        <li><a href = "7_file.html">CSS 파일 이용하기</a></li>
+        <li><a href = "8_final.html">앞으로</a></li>
+      </ol>
+      <div id=article>
+        <h2>반응형 디자인</h2>
+        반응형 디자인은 웹페이지의 크기 등의 정보를 받아 웹페이지의 형태를 바꾸는 디자인입니다. <br>
+        데스크탑 버전 웹사이트와 모바일 버전 웹사이트의 모양이 다른 것은 보는 사람의 편의를 위한 반응형 디자인의 일종입니다. <br>
+        아래는 예시 반응형 디자인을 그림으로 나타낸 것입니다. 이제 아래를 천천히 읽으며 만드는 방법을 알아봅시다!
+        <img src="media_query.jpg" width="70%" style="display: block; margin: 0px auto;">
+        <h3>미디어 쿼리</h3>
+        이 글에서 소개할 반응형 디자인은 미디어 쿼리입니다. 미디어 쿼리를 사용하면 간단히 창의 크기에 따라 style 속성을 변화시킬 수 있습니다. <br>
+        창의 크기는 (max, min)-(width, height)을 이용해 처리합니다. 600px 이상일 때는 <strong>"min-width: 600px"</strong>와 같이 나타내면 됩니다. <br>
+        모든 CSS 코드는 위부터 처리되므로 미디어 쿼리는 제일 밑에 있어야 영향을 받습니다. <br>
+        여러 개의 미디어 쿼리가 있을 때는 위의 미디어 쿼리가 적용되지 않은 경우 아래 미디어 쿼리가 실행됩니다. "else if"와 같이 생각하면 됩니다.
+        <h3>문법</h3>
+        <div id=grammar>
+          미디어 쿼리: @media (<span style="color:blue">(min, max)-(width, height)</span>: ___px) {......} [style 태그 내에 적기]
+        </div>
+        <h3>예시</h3>
+        <div id=example>
+          <span>Extra small devices (600px and down)</span> <span>@media (max-width: 600px) {......}</span>
+          <span>Small devices (600px and up)</span> <span>@media (min-width: 600px) {......}</span>
+          <span>Medium devices (768px and up)</span> <span>@media (min-width: 768px) {......}</span>
+          <span>Large devices (992px and up)</span> <span>@media (min-width: 992px) {......}</span>
+          <span>Extra large devices (1200px and up)</span> <span>@media (min-width: 1200px) {......}</span>
+        </div>
+        <br>
+        반응형 디자인 템플릿을 얻고 싶으시다면: <a href="https://www.w3schools.com/css/css_rwd_templates.asp">https://www.w3schools.com/css/css_rwd_templates.asp</a>
+      </div>
+    </div>
+  </body>
+</html>
